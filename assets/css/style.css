@@ -157,3 +157,27 @@
     color: aliceblue;
     text-decoration: underline;
 }
+
+/* CSS for the Instructions Section */
+
+#instructions {
+    border-bottom: 5px solid #1e1e83;
+}
+
+/* CSS for the Instructions Section */
+
+#footer {
+    height: 80px;
+    background-color: #8f8fd3;
+}
+
+.footer-text {
+    font-size: 16px;
+    font-family: 'Yeseva One', serif;
+    color: aliceblue;
+}
+
+.seperate {
+    gap: 60%;
+    margin-top: 15px;
+}
