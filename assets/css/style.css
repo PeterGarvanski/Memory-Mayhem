@@ -23,14 +23,13 @@
 
 @keyframes rotate {
     from {
-        transform: rotate(0deg);
+      transform: rotate(0deg);
     }
-
     to {
-        transform: rotate(360deg);
+      transform: rotate(360deg);
     }
 }
-
+  
 /* CSS for the Navigation Section */
 
 #navigation {
@@ -91,4 +90,70 @@
     width: fit-content;
     animation: rotate 60s linear infinite;
     margin: auto;
+}
+
+/* CSS for the Game Section */
+
+#game {
+    height: 920px;
+    width: 100%;
+    background-image: url("../images/new-background.jpg");
+    background-repeat: no-repeat;
+    border-bottom: 5px solid #1e1e83;
+}
+
+.game-display {
+    width: 1000px;
+    height: 700px;
+    background-color: #8f8fd3;
+    border: 5px solid #1e1e83;
+    border-radius: 30px;
+}
+
+.title-game {
+    text-decoration: underline;
+    font-size: 40px;
+    margin: 30px 0 40px 30px;
+    font-family: 'Yeseva One', serif;
+    color: #1e1e83;
+}
+
+#start-button {
+    width: 40%;
+    height: 100px;
+    background-color: #2a9f2a;
+    border: 5px solid aliceblue;
+    border-radius: 50px;
+    margin-top: 420px;
+}
+
+.start-button-content {
+    font-size: 40px;
+    font-family: 'Yeseva One', serif;
+    color: aliceblue;
+}
+
+#score-card {
+    width: 90%;
+    height: 50px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 60%;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.score-text {
+    font-size: 32px;
+    font-family: 'Yeseva One', serif;
+    color: aliceblue;
+}
+
+.small-text {
+    margin-top: 30px;
+    font-size: 12px;
+    font-family: 'Yeseva One', serif;
+    color: aliceblue;
+    text-decoration: underline;
 }
