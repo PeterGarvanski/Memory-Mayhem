@@ -153,7 +153,8 @@
 }
 
 .game-display {
-    max-width: 1000px;
+    width: 90%;
+    max-width: 1200px;
     height: 705px;
     background-color: #8f8fd300;
     border-radius: 30px;
@@ -388,7 +389,6 @@
 
     .game-display {
         margin-bottom: 40px;
-        width: 90%;
     }
 
     #start-button {
@@ -426,7 +426,7 @@
     }
 }
 
-/* CSS For Small Laptops and Large Tablet Screen Sizes */
+/* CSS For Small, Medium and Large Phone Screen Sizes */
 
 @media screen and (min-width: 768px) and (max-width: 992px) {
     
@@ -468,7 +468,6 @@
 
     .game-display {
         margin-bottom: 60px;
-        width: 90%;
     }
 
     /* CSS for instructions section */
@@ -502,4 +501,36 @@
 
 @media screen and (min-width: 992px) and (max-width: 1200px) {
 
+    /* CSS for home section */
+
+    #home {
+        height: fit-content;
+    }
+
+    /* CSS for game section */
+
+    .special-center {
+        display: flex;
+        justify-content: center;
+    }
+
+    /* CSS for instructions section */
+
+    #instructions {
+        height: fit-content;
+    }
+
+    /* CSS for footer section */
+    
+    #footer {
+        height: fit-content;
+    }
+
+    .footer-text {
+        font-size: 16px;
+    }
+    
+    .seperate {
+        gap: 40%;
+    }
 }
