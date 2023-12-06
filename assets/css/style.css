@@ -21,6 +21,10 @@
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
+.big-remove {
+    display: none;
+}
+
 @keyframes rotate {
     from {
       transform: rotate(0deg);
@@ -149,7 +153,7 @@
 }
 
 .game-display {
-    width: 1000px;
+    max-width: 1000px;
     height: 705px;
     background-color: #8f8fd300;
     border-radius: 30px;
@@ -238,4 +242,115 @@
 .seperate {
     gap: 60%;
     margin-top: 15px;
+}
+
+/* CSS For Small, Medium and Large Phone Screen Sizes */
+
+@media screen and (min-width: 320px) and (max-width: 576px) {
+    
+    /* CSS for navigation section */
+    .nav-menu {
+        margin-top: 20px;
+    }
+
+    .nav-links {
+        font-size: 20px;
+    }
+
+    /* CSS for home section */
+    .title {
+        font-size: 30px;
+        margin: 20px 0 20px 0;
+    }
+
+    .special-center {
+        display: flex;
+        justify-content: center;
+    }
+
+    #home {
+        height: fit-content;
+        background-image: linear-gradient(to right, rgb(72 75 77), rgba(0, 0, 0, 0), rgb(72 75 77)),;
+        background-size: 100%;
+    }
+
+    .remove {
+        display: none;
+    }
+
+    /* CSS for game section */
+
+    .title-game {
+        font-size: 26px;
+        margin: 20px 0 20px 0;
+    }
+
+    .score-text {
+        font-size: 16px;
+    }
+
+    #game {
+        height: fit-content;
+    }
+
+    .game-display {
+        margin-bottom: 40px;
+    }
+
+    .small-text {
+        display: none;
+    }
+
+    #start-button {
+        border-radius: 25px;
+        margin-top: 500px;
+    }
+    
+    .start-button-content {
+        font-size: 26px;
+    }
+
+    /* CSS for instructions section */
+
+    #instructions {
+        height: fit-content;
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgb(72 75 77));
+        background-size: 100%;
+    }
+
+    .big-remove {
+        display: flex;
+    }
+
+    /* CSS for footer section */
+
+    #footer {
+        height: fit-content;
+    }
+    
+    .footer-text {
+        font-size: 10px;
+    }
+    
+    .seperate {
+        gap: 30%;
+    }
+}
+
+/* CSS For Small, Medium and Large Phone Screen Sizes */
+
+@media screen and (min-width: 576px) and (max-width: 768px) {
+
+}
+
+/* CSS For Small, Medium and Large Phone Screen Sizes */
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+
+}
+
+/* CSS For Small, Medium and Large Phone Screen Sizes */
+
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+
 }
