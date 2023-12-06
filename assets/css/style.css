@@ -426,10 +426,76 @@
     }
 }
 
-/* CSS For Small, Medium and Large Phone Screen Sizes */
+/* CSS For Small Laptops and Large Tablet Screen Sizes */
 
 @media screen and (min-width: 768px) and (max-width: 992px) {
+    
+    /* CSS for navigation section */
+    
+    .nav-menu {
+        margin-top: 10px;
+    }
 
+    /* CSS for home section */
+    .title {
+        margin: 20px 0 20px 0;
+    }
+
+    .special-center {
+        display: flex;
+        justify-content: center;
+    }
+
+    #home {
+        height: fit-content;
+        background-image: linear-gradient(to right, rgb(72 75 77), rgba(0, 0, 0, 0), rgb(72 75 77)),;
+        background-size: 100%;
+    }
+
+    .small-remove {
+        display: none;
+    }
+
+    /* CSS for game section */
+
+    .score-text {
+        font-size: 22px;
+    }
+
+    #game {
+        height: fit-content;
+    }
+
+    .game-display {
+        margin-bottom: 60px;
+        width: 90%;
+    }
+
+    /* CSS for instructions section */
+
+    #instructions {
+        height: fit-content;
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgb(72 75 77));
+        background-size: 100%;
+    }
+
+    .big-remove {
+        display: flex;
+    }
+
+    /* CSS for footer section */
+
+    #footer {
+        height: fit-content;
+    }
+    
+    .footer-text {
+        font-size: 12px;
+    }
+    
+    .seperate {
+        gap: 35%;
+    }
 }
 
 /* CSS For Small, Medium and Large Phone Screen Sizes */
