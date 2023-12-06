@@ -274,7 +274,7 @@
         background-size: 100%;
     }
 
-    .remove {
+    .small-remove {
         display: none;
     }
 
@@ -337,10 +337,93 @@
     }
 }
 
-/* CSS For Small, Medium and Large Phone Screen Sizes */
+/* CSS For Small and Medium Tablet Sizes */
 
 @media screen and (min-width: 576px) and (max-width: 768px) {
+    
+    /* CSS for navigation section */
+    .nav-menu {
+        margin-top: 20px;
+    }
 
+    .nav-links {
+        font-size: 26px;
+    }
+
+    /* CSS for home section */
+    .title {
+        font-size: 30px;
+        margin: 20px 0 20px 0;
+    }
+
+    .special-center {
+        display: flex;
+        justify-content: center;
+    }
+
+    #home {
+        height: fit-content;
+        background-image: linear-gradient(to right, rgb(72 75 77), rgba(0, 0, 0, 0), rgb(72 75 77)),;
+        background-size: 100%;
+    }
+
+    .small-remove {
+        display: none;
+    }
+
+    /* CSS for game section */
+
+    .title-game {
+        font-size: 30px;
+        margin: 20px 0 20px 0;
+    }
+
+    .score-text {
+        font-size: 18px;
+    }
+
+    #game {
+        height: fit-content;
+    }
+
+    .game-display {
+        margin-bottom: 40px;
+        width: 90%;
+    }
+
+    #start-button {
+        border-radius: 35px;
+    }
+    
+    .start-button-content {
+        font-size: 30px;
+    }
+    
+    /* CSS for instructions section */
+
+    #instructions {
+        height: fit-content;
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgb(72 75 77));
+        background-size: 100%;
+    }
+
+    .big-remove {
+        display: flex;
+    }
+    
+    /* CSS for footer section */
+
+    #footer {
+        height: fit-content;
+    }
+    
+    .footer-text {
+        font-size: 12px;
+    }
+    
+    .seperate {
+        gap: 30%;
+    }
 }
 
 /* CSS For Small, Medium and Large Phone Screen Sizes */
