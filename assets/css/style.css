@@ -106,7 +106,8 @@
 /* CSS for the Home Section */
 
 #home {
-    height: 755px;
+    height: fit-content;
+    /* height: 755px; */
     border-bottom: 5px solid #1e1e83;
     background-image: linear-gradient(to right, rgb(72 75 77), rgba(0, 0, 0, 0));
     background-size: 50%;
@@ -145,7 +146,8 @@
 /* CSS for the Game Section */
 
 #game {
-    height: 920px;
+    height: fit-content;
+    /* height: 920px; */
     width: 100%;
     background-image: url("../images/new-background.jpg");
     background-repeat: no-repeat;
@@ -158,6 +160,7 @@
     height: 705px;
     background-color: #8f8fd300;
     border-radius: 30px;
+    margin-bottom: 60px;
 }
 
 .title-game {
@@ -212,7 +215,8 @@
 
 #instructions {
     border-bottom: 5px solid #1e1e83;
-    height: 750px;
+    height: fit-content;
+    /* height: 750px; */
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgb(72 75 77));
     background-repeat: no-repeat;
 }
@@ -230,7 +234,7 @@
 /* CSS for the Instructions Section */
 
 #footer {
-    height: 80px;
+    height: fit-content;
     background-color: #8f8fd3;
 }
 
@@ -241,7 +245,7 @@
 }
 
 .seperate {
-    gap: 60%;
+    gap: 50%;
     margin-top: 15px;
 }
 
@@ -270,7 +274,6 @@
     }
 
     #home {
-        height: fit-content;
         background-image: linear-gradient(to right, rgb(72 75 77), rgba(0, 0, 0, 0), rgb(72 75 77)),;
         background-size: 100%;
     }
@@ -288,10 +291,6 @@
 
     .score-text {
         font-size: 16px;
-    }
-
-    #game {
-        height: fit-content;
     }
 
     .game-display {
@@ -314,7 +313,6 @@
     /* CSS for instructions section */
 
     #instructions {
-        height: fit-content;
         background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgb(72 75 77));
         background-size: 100%;
     }
@@ -324,10 +322,6 @@
     }
 
     /* CSS for footer section */
-
-    #footer {
-        height: fit-content;
-    }
     
     .footer-text {
         font-size: 10px;
@@ -363,7 +357,6 @@
     }
 
     #home {
-        height: fit-content;
         background-image: linear-gradient(to right, rgb(72 75 77), rgba(0, 0, 0, 0), rgb(72 75 77)),;
         background-size: 100%;
     }
@@ -383,10 +376,6 @@
         font-size: 18px;
     }
 
-    #game {
-        height: fit-content;
-    }
-
     .game-display {
         margin-bottom: 40px;
     }
@@ -402,7 +391,6 @@
     /* CSS for instructions section */
 
     #instructions {
-        height: fit-content;
         background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgb(72 75 77));
         background-size: 100%;
     }
@@ -412,10 +400,6 @@
     }
     
     /* CSS for footer section */
-
-    #footer {
-        height: fit-content;
-    }
     
     .footer-text {
         font-size: 12px;
@@ -437,6 +421,7 @@
     }
 
     /* CSS for home section */
+
     .title {
         margin: 20px 0 20px 0;
     }
@@ -447,7 +432,6 @@
     }
 
     #home {
-        height: fit-content;
         background-image: linear-gradient(to right, rgb(72 75 77), rgba(0, 0, 0, 0), rgb(72 75 77)),;
         background-size: 100%;
     }
@@ -462,10 +446,6 @@
         font-size: 22px;
     }
 
-    #game {
-        height: fit-content;
-    }
-
     .game-display {
         margin-bottom: 60px;
     }
@@ -473,7 +453,6 @@
     /* CSS for instructions section */
 
     #instructions {
-        height: fit-content;
         background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgb(72 75 77));
         background-size: 100%;
     }
@@ -483,10 +462,6 @@
     }
 
     /* CSS for footer section */
-
-    #footer {
-        height: fit-content;
-    }
     
     .footer-text {
         font-size: 12px;
@@ -501,12 +476,6 @@
 
 @media screen and (min-width: 992px) and (max-width: 1200px) {
 
-    /* CSS for home section */
-
-    #home {
-        height: fit-content;
-    }
-
     /* CSS for game section */
 
     .special-center {
@@ -514,17 +483,7 @@
         justify-content: center;
     }
 
-    /* CSS for instructions section */
-
-    #instructions {
-        height: fit-content;
-    }
-
     /* CSS for footer section */
-    
-    #footer {
-        height: fit-content;
-    }
 
     .footer-text {
         font-size: 16px;
