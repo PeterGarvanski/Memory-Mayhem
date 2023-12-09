@@ -1,8 +1,7 @@
 class Game {
     
-    constructor(score, highScore, level, lives) {
+    constructor(score, level, lives) {
       this.score = score;
-      this.highScore = highScore;
       this.level = level;
       this.lives = lives;
       this.generatedSquares = [];
@@ -12,11 +11,6 @@ class Game {
     // Getter for the score property
     getScore() {
         return this.score
-    };
-
-    // Getter for the highScore property
-    getHighScore() {
-        return this.highScore
     };
 
     // Getter for the level property
@@ -36,6 +30,25 @@ class Game {
     getSelectedSquares() {
         return this.selectedSquares
     };
+
+    // Setter for the score property
+    setScore() {
+        $("#score").empty().append('Score: ' + this.score);
+    };
+
+    // Setter for the lives property
+    setLives() {
+        $("#lives").empty().append('Lives: ' + this.lives);
+    };
+
+    setGeneratedSquares(array) {
+        this.generatedSquares = array
+    };
+
+    setSelectedSquares(array) {
+        this.selectedSquares = array
+    };
+
 
     // Clears the game display
     startGame() {
@@ -65,6 +78,7 @@ class Game {
 
     // Selects random squares based on the score property to flash and unflash
     async squareGenerator(score, level) {
+        
         return new Promise((resolve) => {
             for (let i = 0; i < score; i++) {
                 let boxID = Math.floor(Math.random() * (level * level) + 1);
@@ -85,7 +99,7 @@ class Game {
             }, 4000);
         });
     }
-
+    
     async playerTurn(score) {
         return new Promise((resolve) => {
             let clickedSquares = 0;
@@ -129,7 +143,6 @@ class Game {
     
         if (arraysAreEqual(arr1, arr2)) {
             this.score++;
-            this.level++;
         }
     
         function arraysAreEqual(arr1, arr2) {
@@ -146,13 +159,22 @@ class Game {
             return true;
         }
     }
+
+    levelIncrementor(score, lives) {
+        if (score % 5 === 0) {
+            this.level++;
+        }
+
+        this.setScore(score)
+        this.setLives(lives)
+    }
     
     endGame() {
         let html = `
         <div class="row" id="score-card-box">
             <div id="score-card">
-                <h1 class="score-text">Score: 0</h1>
-                <h1 class="score-text">High Score: 0</h1>
+                <h1 class="score-text id="score">Score: 0</h1>
+                <h1 class="score-text" id="lives">Lives: 0</h1>
             </div>
         </div>
         <div class="row center">
@@ -171,17 +193,20 @@ class Game {
 }
 
 async function gameSequence() {
-    const user = new Game(3, 0, 3, 3);
-
+    const user = new Game(3, 3, 3);
+    user.setScore()
+    user.setLives()
+  
     while (user.getLives() > 0) {
         user.startGame();
         user.displayBuilder(user.getLevel());
+        user.setGeneratedSquares([])
+        user.setSelectedSquares([])
         await user.squareGenerator(user.getScore(), user.getLevel());
         await user.playerTurn(user.getScore());
         user.comparator(user.getGeneratedSquares(), user.getSelectedSquares());
-        console.log(user.getLevel());
-        console.log(user.getLives());
-        }
+        user.levelIncrementor(user.getScore(), user.getLives());
+    }
 
     user.endGame()
 }
