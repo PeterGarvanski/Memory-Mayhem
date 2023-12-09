@@ -240,6 +240,14 @@
     margin: auto;
 }
 
+.selected {
+    background-color: #8f8fd3;
+}
+
+.wrong-choice {
+    background-color: #53535346;
+}
+
 /* CSS for the Instructions Section */
 
 #instructions {
@@ -323,6 +331,8 @@
 
     .game-display {
         margin-bottom: 40px;
+        height: fit-content;
+        padding-bottom: 30px;
     }
 
     .small-text {
@@ -336,6 +346,11 @@
 
     .start-button-content {
         font-size: 26px;
+    }
+
+    .center-box {
+        height: 250px;
+        width: 250px;
     }
 
     /* CSS for instructions section */
@@ -406,6 +421,8 @@
 
     .game-display {
         margin-bottom: 40px;
+        height: fit-content;
+        padding-bottom: 40px;
     }
 
     #start-button {
@@ -414,6 +431,11 @@
 
     .start-button-content {
         font-size: 30px;
+    }
+
+    .center-box {
+        height: 480px;
+        width: 480px;
     }
 
     /* CSS for instructions section */
