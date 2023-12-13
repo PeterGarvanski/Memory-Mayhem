@@ -93,4 +93,28 @@ describe("Testing Game Class", () => {
             expect(gameDisplay.style.backgroundColor).toBe("white");
         });
     });
+
+    describe("Testing Display Builder Method", () => {
+        beforeEach(() => {
+            game = new Game(3, 3, 3);
+
+            document.body.innerHTML = `
+                <div class="row box-display">
+                    <div class="row" id="score-card-box">
+                        <div id="score-card">
+                            <h1 class="score-text" id="score">Score: 0</h1>
+                            <h1 class="score-text" id="lives">Lives: 0</h1>
+                        </div>
+                    </div>
+                </div>
+            `;
+        });
+
+        test("The display builder method creates the correct amount of squares", () => {
+            game.displayBuilder();
+            const element = document.getElementsByClassName("box-display")[0]
+            lastChild = element.children[element.children.length -1]
+            expect(lastChild.id).toBe("9");
+        });
+    });
 });

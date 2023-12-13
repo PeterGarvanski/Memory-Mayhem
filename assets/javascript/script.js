@@ -1,4 +1,4 @@
-// Comment This out for your game to run
+// Uncomment the line below for your Tests to run
 const $ = require('jquery');
 
 class Game {
