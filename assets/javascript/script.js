@@ -1,7 +1,7 @@
+// Comment This out for your game to run
 const $ = require('jquery');
 
 class Game {
-
     constructor(score, level, lives) {
         this.score = score;
         this.level = level;
