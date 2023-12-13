@@ -107,7 +107,7 @@ class Game {
     async playerTurn() {
         return new Promise((resolve) => {
             let clickedSquares = 0;
-            let wrongChoices = 0;
+            let wrongSquares = []
             const self = this;
             
             // Function for the users Click
@@ -120,7 +120,7 @@ class Game {
                 }
 
                 // If the user selects the same square ignore the input
-                else if (self.selectedSquares.includes(boxID)) {
+                else if (self.selectedSquares.includes(boxID) || wrongSquares.includes(boxID)) {
                     return
                 }
 
@@ -134,13 +134,12 @@ class Game {
                     // If the user selects the right square increment the wrong choice count, remove a life and add selected class
                     else {
                         $(this).toggleClass("wrong-choice");
-                        self.selectedSquares.push(boxID);
+                        wrongSquares.push(boxID);
                         self.lives--;
                         self.setLives();
-                        wrongChoices++;
                         
                         // If the user runs out of lives end users turn
-                        if (wrongChoices > 3) {
+                        if (wrongSquares.length >= 3) {
                             $(".box").off("click", handleClick);
                             resolve();
                             return;
