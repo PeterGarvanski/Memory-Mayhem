@@ -1,36 +1,38 @@
+const $ = require('jquery');
+
 class Game {
-    
+
     constructor(score, level, lives) {
-      this.score = score;
-      this.level = level;
-      this.lives = lives;
-      this.generatedSquares = [];
-      this.selectedSquares = [];
+        this.score = score;
+        this.level = level;
+        this.lives = lives;
+        this.generatedSquares = [];
+        this.selectedSquares = [];
     }
 
     // Getter for the score property
     getScore() {
-        return this.score
+        return this.score;
     };
 
     // Getter for the level property
     getLevel() {
-        return this.level
+        return this.level;
     };
 
     // Getter for the lives property
     getLives() {
-        return this.lives
+        return this.lives;
     };
 
     // Getter for the generatedSquares property
     getGeneratedSquares() {
-        return this.generatedSquares
+        return this.generatedSquares;
     };
 
     // Getter for the selectedSquares property
     getSelectedSquares() {
-        return this.selectedSquares
+        return this.selectedSquares;
     };
 
     // Setter for the score property
@@ -45,12 +47,12 @@ class Game {
 
     // Setter for the generatedSquares property
     setGeneratedSquares(array) {
-        this.generatedSquares = array
+        this.generatedSquares = array;
     };
 
     // Setter for the selectedSquares property
     setSelectedSquares(array) {
-        this.selectedSquares = array
+        this.selectedSquares = array;
     };
 
 
@@ -59,19 +61,19 @@ class Game {
         $("#score-card-box").siblings().remove();
         $(".game-display").css("background-color", "white");
     };
-    
+
     // Displays a grid of squares based on the level you are at
     displayBuilder() {
         let startHtml = `<div class="center center-box"><div class="row box-display"></div></div>`;
         let allBoxes = ``;
-        
+
         let scoreCard = $("#score-card-box");
         scoreCard.after(startHtml);
-        
+
         let boxDisplay = $(".box-display");
         boxDisplay.css("grid-template-columns", `repeat(${this.level}, 1fr)`);
         boxDisplay.css("grid-template-rows", `repeat(${this.level}, 1fr)`);
-    
+
         // Uses the level number to generate the required amount of boxes
         for (let i = 0; i < this.level * this.level; i++) {
             allBoxes += `<div class="box shadow" id="${i + 1}"></div>`;
@@ -82,7 +84,7 @@ class Game {
 
     // Selects random squares based on the score property to flash and unflash
     async squareGenerator() {
-        
+
         return new Promise((resolve) => {
             for (let i = 0; i < this.score; i++) {
                 let boxID = Math.floor(Math.random() * (this.level * this.level) + 1);
@@ -103,17 +105,17 @@ class Game {
             }, 3000);
         });
     }
-    
+
     async playerTurn() {
         return new Promise((resolve) => {
             let clickedSquares = 0;
-            let wrongSquares = []
+            let wrongSquares = [];
             const self = this;
-            
+
             // Function for the users Click
             function handleClick() {
                 let boxID = parseInt($(this).attr('id'));
-                
+
                 // If the user has selected the required amount of squares turn the click function off
                 if (clickedSquares >= self.score) {
                     $(".box").off("click", handleClick);
@@ -121,7 +123,7 @@ class Game {
 
                 // If the user selects the same square ignore the input
                 else if (self.selectedSquares.includes(boxID) || wrongSquares.includes(boxID)) {
-                    return
+                    return;
                 }
 
                 else {
@@ -130,14 +132,14 @@ class Game {
                         $(this).toggleClass("selected");
                         self.selectedSquares.push(boxID);
                         clickedSquares++;
-                    } 
+                    }
                     // If the user selects the right square increment the wrong choice count, remove a life and add selected class
                     else {
                         $(this).toggleClass("wrong-choice");
                         wrongSquares.push(boxID);
                         self.lives--;
                         self.setLives();
-                        
+
                         // If the user runs out of lives end users turn
                         if (wrongSquares.length >= 3) {
                             $(".box").off("click", handleClick);
@@ -149,7 +151,7 @@ class Game {
             }
 
             $(".box").on("click", handleClick);
-            
+
             // Resolve the promise when the player's turn is completed
             $(".box").on("click", function checkScore() {
                 if (clickedSquares >= self.getScore()) {
@@ -160,7 +162,7 @@ class Game {
             });
         });
     }
-    
+
 
     comparator() {
         // Sorts both arrays
@@ -171,18 +173,18 @@ class Game {
         if (arraysAreEqual(arr1, arr2)) {
             this.score++;
         }
-    
+
         function arraysAreEqual(arr1, arr2) {
             if (arr1.length !== arr2.length) {
                 return false;
             }
-    
+
             for (let i = 0; i < arr1.length; i++) {
                 if (arr1[i] !== arr2[i]) {
                     return false;
                 }
             }
-    
+
             return true;
         }
     }
@@ -193,10 +195,10 @@ class Game {
             this.level++;
         }
 
-        this.setScore()
-        this.setLives()
+        this.setScore();
+        this.setLives();
     }
-    
+
     // Returns the html back to its original state
     endGame() {
         let html = `
@@ -216,29 +218,31 @@ class Game {
                 <p class="small-text">Please read the instruction below before starting to play!</p>
             </div>
         </div>`;
-    
+
         $(".game-display").html(html);
         $(".game-display").removeAttr("style");
-    }    
+    }
 }
 
 async function gameSequence() {
     const user = new Game(3, 3, 3);
-    user.setScore()
-    user.setLives()
-  
+    user.setScore();
+    user.setLives();
+
     while (user.getLives() > 0) {
         user.startGame();
         user.displayBuilder(user.getLevel());
-        user.setGeneratedSquares([])
-        user.setSelectedSquares([])
+        user.setGeneratedSquares([]);
+        user.setSelectedSquares([]);
         await user.squareGenerator();
         await user.playerTurn();
         user.comparator();
         user.levelIncrementor();
     }
 
-    user.endGame()
+    user.endGame();
 }
 
 $(document).on("click", "#start-button", gameSequence);
+
+module.exports = { Game };
