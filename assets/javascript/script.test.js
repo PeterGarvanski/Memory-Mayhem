@@ -2,6 +2,7 @@
 * @jest-environment jsdom
 */
 
+const { assertMemberExpression } = require('@babel/types');
 const { Game } = require('./script');
 
 describe("Testing Game Class", () => {
@@ -112,9 +113,100 @@ describe("Testing Game Class", () => {
 
         test("The display builder method creates the correct amount of squares", () => {
             game.displayBuilder();
-            const element = document.getElementsByClassName("box-display")[0]
-            lastChild = element.children[element.children.length -1]
+            const element = document.getElementsByClassName("box-display")[0];
+            lastChild = element.children[element.children.length -1];
             expect(lastChild.id).toBe("9");
         });
+    });
+
+    describe("Testing Square Generator Method", () => {
+        beforeEach(() => {
+            game = new Game(5, 3, 3);
+        });
+
+        test("The square generator method correctly selects the right amount of squares based upon score", () => {
+            game.squareGenerator();
+            expect(game.getGeneratedSquares().length).toBe(5);
+        });
+    });
+
+    // describe("Testing Player Turn Method", () => {
+    //     beforeEach(() => {
+    //         game = new Game(5, 3, 3);
+    //     });
+
+    //     test("The square generator method correctly selects the right amount of squares based upon score", () => {
+    //         game.squareGenerator()
+    //         expect(game.getGeneratedSquares().length).toBe(5);
+    //     });
+    // });
+
+    describe("Testing Comparator Method", () => {
+        beforeEach(() => {
+            game = new Game(8, 3, 3);
+        });
+
+        test("The comparator method correctly compares generated squares with selected squares", () => {
+            game.setGeneratedSquares([1, 2, 3, 4, 5]);
+            game.setSelectedSquares([1, 2, 3, 4, 5]);
+            game.comparator();
+            expect(game.getScore()).toBe(9);
+        });
+        test("The comparator method doesnt increment score when generated squares and selected squares are not equal", () => {
+            game.setGeneratedSquares([1, 6, 3, 9, 5]);
+            game.setSelectedSquares([1, 2, 3, 4, 5]);
+            game.comparator();
+            expect(game.getScore()).toBe(8);
+        });
+    });
+
+    describe("Testing Level Incrementor Method", () => {
+        beforeEach(() => {
+            game = new Game(5, 3, 3);
+        });
+
+        test("The Level incrementor method correctly changes the level when the score reaches a multiple of 5", () => {
+            game.levelIncrementor();
+            expect(game.getLevel()).toBe(4);
+        });
+    });
+
+    describe("Testing End Game Method", () => {
+        beforeEach(() => {
+            game = new Game(3, 3, 3);
+            document.body.innerHTML = `<div class="col-sm-12 game-display shadow"></div>`;
+        });
+    
+        test("The end game method correctly returns the HTML document to the correct state", () => {
+            let gameDisplay = document.getElementsByClassName("game-display")[0];
+            let html = 
+            `
+            <div class="row" id="score-card-box">
+                <div id="score-card">
+                    <h1 class="score-text" id="score">Score: 0</h1>
+                    <h1 class="score-text" id="lives">Lives: 0</h1>
+                </div>
+            </div>
+            <div class="row center">
+                <button id="start-button" class="shadow">
+                    <h1 class="start-button-content">Start Game!</h1>
+                </button>
+            </div>
+            <div class="row">
+                <div class="center">
+                    <p class="small-text">Please read the instruction below before starting to play!</p>
+                </div>
+            </div>
+            `;
+            game.endGame();
+            let receivedHTML = gameDisplay.innerHTML;
+            expect(receivedHTML == html);
+        });
+
+        test("The end game method removes the style attribute from game display", () => {
+            let gameDisplay = document.getElementsByClassName("game-display")[0];
+            game.endGame();
+            expect(gameDisplay.css).toBeUndefined();
+        })
     });
 });
