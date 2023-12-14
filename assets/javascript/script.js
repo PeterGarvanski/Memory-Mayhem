@@ -56,6 +56,11 @@ class Game {
         this.selectedSquares = array;
     };
 
+    // Setter for the wrongSquares property
+    setWrongSquares(array) {
+        this.wrongSquares = array;
+    };
+
 
     // Clears the game display
     startGame() {
@@ -146,7 +151,6 @@ class Game {
                         self.wrongSquares.push(boxID);
                         self.lives--;
                         self.setLives();
-                        console.log(self.wrongSquares.length);
                     }
                 }
             }
@@ -234,6 +238,7 @@ async function gameSequence() {
         user.displayBuilder(user.getLevel());
         user.setGeneratedSquares([]);
         user.setSelectedSquares([]);
+        user.setWrongSquares([])
         await user.squareGenerator();
         await user.playerTurn();
         user.comparator();
