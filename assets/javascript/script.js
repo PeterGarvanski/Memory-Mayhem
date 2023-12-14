@@ -8,6 +8,7 @@ class Game {
         this.lives = lives;
         this.generatedSquares = [];
         this.selectedSquares = [];
+        this.wrongSquares = []
     }
 
     // Getter for the score property
@@ -109,7 +110,6 @@ class Game {
     async playerTurn() {
         return new Promise((resolve) => {
             let clickedSquares = 0;
-            let wrongSquares = [];
             const self = this;
 
             // Function for the users Click
@@ -121,8 +121,15 @@ class Game {
                     $(".box").off("click", handleClick);
                 }
 
+                // If the user runs out of lives end users turn
+                else if (self.wrongSquares.length >= 3) {
+                    $(".box").off("click", handleClick);
+                    resolve();
+                    return;
+                }
+
                 // If the user selects the same square ignore the input
-                else if (self.selectedSquares.includes(boxID) || wrongSquares.includes(boxID)) {
+                else if (self.selectedSquares.includes(boxID) || self.wrongSquares.includes(boxID)) {
                     return;
                 }
 
@@ -136,16 +143,10 @@ class Game {
                     // If the user selects the right square increment the wrong choice count, remove a life and add selected class
                     else {
                         $(this).toggleClass("wrong-choice");
-                        wrongSquares.push(boxID);
+                        self.wrongSquares.push(boxID);
                         self.lives--;
                         self.setLives();
-
-                        // If the user runs out of lives end users turn
-                        if (wrongSquares.length >= 3) {
-                            $(".box").off("click", handleClick);
-                            resolve();
-                            return;
-                        }
+                        console.log(self.wrongSquares.length);
                     }
                 }
             }
@@ -162,7 +163,6 @@ class Game {
             });
         });
     }
-
 
     comparator() {
         // Sorts both arrays
