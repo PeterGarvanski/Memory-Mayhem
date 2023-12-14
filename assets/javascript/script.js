@@ -127,7 +127,7 @@ class Game {
                 }
 
                 // If the user runs out of lives end users turn
-                else if (self.wrongSquares.length >= 3) {
+                else if (self.lives < 1) {
                     $(".box").off("click", handleClick);
                     resolve();
                     return;
