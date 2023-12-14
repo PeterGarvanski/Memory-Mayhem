@@ -2,7 +2,6 @@
 * @jest-environment jsdom
 */
 
-const { assertMemberExpression } = require('@babel/types');
 const { Game } = require('./script');
 
 describe("Testing Game Class", () => {
@@ -129,17 +128,6 @@ describe("Testing Game Class", () => {
             expect(game.getGeneratedSquares().length).toBe(5);
         });
     });
-
-    // describe("Testing Player Turn Method", () => {
-    //     beforeEach(() => {
-    //         game = new Game(5, 3, 3);
-    //     });
-
-    //     test("The square generator method correctly selects the right amount of squares based upon score", () => {
-    //         game.squareGenerator()
-    //         expect(game.getGeneratedSquares().length).toBe(5);
-    //     });
-    // });
 
     describe("Testing Comparator Method", () => {
         beforeEach(() => {
