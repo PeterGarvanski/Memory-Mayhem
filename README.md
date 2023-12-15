@@ -1,39 +1,165 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Memory Mayhem
 
-Welcome,
+## Purpose of the Project
 
-This is the Code Institute student template for Codeanywhere. If you are using Gitpod then you need [this template](https://github.com/Code-Institute-Org/gitpod-full-template) instead.  We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+**Description:**
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Codeanywhere and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **August 30th, 2023**
+Welcome to Memory Mayhem, a thrilling web-based memory game that challenges your cognitive skills and sharpens your memory prowess!
+Memory Mayhem is designed to provide an entertaining and stimulating experience while enhancing memory retention and cognitive abilities. The game aims to:
 
-## Codeanywhere Reminders
+**Exercise Your Memory:** 
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere, in the terminal, type:
+Engage in a fun-filled gameplay experience that requires remembering patterns, sequences, and placements.
 
-`python3 -m http.server`
+**Boost Cognitive Skills:** 
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
+Sharpen your concentration, attention to detail, and overall cognitive abilities through interactive gameplay.
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere with no-cache, you can use this alias for `python3 -m http.server`.
+**Entertainment and Enjoyment:** 
 
-`http_server`
+Delve into an immersive world of squares and challenges, offering a delightful break from routine while keeping your mind engaged.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
+### Why This Project:
 
-In Codeanywhere you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+Creating Memory Mayhem offers the chance to provide an engaging, enjoyable way for people to enhance their memory skills while having fun, ultimately aiming to offer a playful yet impactful tool for cognitive improvement.
 
-To log into the Heroku toolbelt CLI:
+### Project Objectives:
 
-1. Log in to your Heroku account and go to _Account Settings_ in the menu under your avatar.
-2. Scroll down to the _API Key_ and click _Reveal_
-3. Copy the key
-4. In Codeanywhere, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+- *Enhance Memory Skills:* Develop a game that effectively challenges and improves users' memory retention, recall, and cognitive abilities through engaging gameplay.
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+- *User Engagement:* Create an immersive and captivating gaming experience to ensure high user engagement, encouraging frequent revisits and extended play sessions.
 
----
+- *Scalable Difficulty Levels:* Implement a system with scalable difficulty levels to accommodate players of varying skill levels, providing both newcomers and experienced users with a challenging yet enjoyable experience.
 
-Happy coding!
+- *Technologically Inclusie:* Make the website scalable and supported across all browsers and screen widths.
+
+- *Comprehensively Tested:* Create a structurally rigid website prone to no bugs or issues.
+  
+## User Stories
+
+### Current User Stories:
+
+1. **As a new player:** I want instructions that guide me through the game mechanics, explaining how to play and offering tips for improving my memory skills.
+
+2. **As an experienced player:** I want challenging levels that push my memory abilities further, keeping the game engaging even as I improve.
+
+3. **As a player on the go:** I want the game to be accessible on multiple devices, allowing me to play during transit or regardless of the platform i'm using.
+
+4. **As a player concerned about my learning curve:** I want the difficulty to gradually increase as I progress through levels, allowing me to adapt and improve without feeling overwhelmed.
+
+5. **As a parent:** I want the game and website to be easily understandable in order to allow my children to play, I would also expect it to have family-freindly content.
+
+### Future User Stories:
+
+1. **As a competitive user:** I want the ability to see high scores or compete against friends on a leaderboard to add a social element to the game.
+
+2. **As a user with limited time:** I want the option to save my progress mid-game, enabling me to continue from where I left off in a later session.
+
+3. **As a user with specific preferences:** I want the option to choose from various themes and square designs to personalize my gaming experience.
+
+## Features
+
+### Key Features:
+
+- **Navigation:** Easy-to-use navigation for seamless user experience whilst orientating the website. This feature displays the navigation links, taking you to each individual section of the website.
+![Navigation Screenshot](assets/images/read-me-images/navigation.jpg)
+
+- **Home Section:** An introduction to the website which includes two informative sections and a animated cartoon brain. One of these sections decribes the cognitive benefits of memroy games whilst the other informs the users about Memory Mayhem.
+![Home Page Screenshot](assets/images/read-me-images/home-page.jpg)
+
+- **Game Section:** Showcases the game display which includes a score and live counters. At the bottom of the display you will find a well-placed vibrant green button, which when pressed will start Memory Mayhem. Gameplay is **INFINITE!**
+![Game Page Screenshot](assets/images/read-me-images/game-page.jpg)
+![Gameplay Level 3 Screenshot](assets/images/read-me-images/gameplay-level-3.jpg)
+![Gameplay Level 4 Screenshot](assets/images/read-me-images/gameplay-level-4.jpg)
+![Gameplay Level 5 Screenshot](assets/images/read-me-images/gameplay-level-5.jpg)
+
+- **Instructions Section:** Information on how to play, scoring, accesing the game and more. On the left handside, an animated question mark rolls in when refreshed.
+![Instructions Page Screenshot](assets//images/read-me-images/instructions-page.jpg)
+
+- Footer Section: In the footer users can find copyright information and contact details.
+![Footer Screenshot](assets/images/read-me-images/footer-section.jpg)
+
+## Future Features
+
+### Planned Future Features:
+
+- Implement a user registration and login system.
+- Develop a leaderboards page so users can compare highscores.
+- Include a high-score counter, which tracks your all time high-score.
+
+## User Experience Design Features
+
+### Intuitive Scroll:
+
+- Each page is designed to end slightly before the end of the browsers viewing height. This is done so that the following page's heading is visible from the previous page. This entices users to keep scrolling down and view the following pages. It also disproves the misconception that the website finishes there. I have implemented this for all the supported devices.
+
+### Typography:
+
+- **Primary Font:** *Yeseva One*, often conveys a sense of elegance and sophistication, making it suitable for designs requiring a touch of class or refinement. Its graceful curves and proportions can add a sense of style to headings or titles.
+
+- **Secondary Font:** *Sans-Serif*, I chose my secondary font as sans-serif as its the basic font built across all browsers and supported everywhere. If by some reason my main font doesn't load I can always rely and depend on sans-serif.
+
+### Color Scheme:
+
+- **Primary Color:** *#8f8fd3* is a soft and muted shade of lavender. This color tends to evoke a sense of calmness, tranquility, and relaxation. It can be suitable for creating a serene and peaceful user experience, perfect for it's compatability with a memory game.
+  
+- **Secondary Color:** *#1e1e83* is a deep navy blue. Against lighter backgrounds, this color provides strong contrast, making text or elements placed on it more readable. It can be useful for highlighting important information or creating emphasis.
+
+## Wireframes
+
+### Wireframes:
+
+- **Home Section Wireframe:** ![Home Wirerame Screenshot](assets/images/wireframe-images/home-page-wireframe.jpg)
+
+- **Game Section Wireframe:** ![Game Wirerame Screenshot](assets/images/wireframe-images/game-page-wireframe.jpg)
+
+- **Instructions Section Wireframe:** ![Instructions Wirerame Screenshot](assets/images/wireframe-images/instructions-page-wireframe.jpg)
+
+## Technologies
+
+### Languages:
+
+- **HTML:** Used to structure the contents for my website.
+- **CSS:** Used to style the content of my website.
+- **JavaScript:** Used to add the interactivity to the website.
+
+**Frameworks and Add-Ons:**
+
+- **Jquery:** Used to make manipulating the DOM easier.
+- **Jest:** Used to mock and test my javascript code.
+- **Bootstrap:** Used to make the website scalable across multiple screen sizes.
+- **Google Fonts:** Used to apply non-included fonts onto my text.
+
+**Additional:**
+
+- **GitPod:** My Integrated Development Environment.
+- **Git and Github:** Used Git for source code management and github for version control.
+- **GitPages:** For deployment of my website.
+
+## Testing
+
+**W3C Validator:**
+
+- HTML ![HTML Passing Validator Screenshot](assets/images/html-validator.png)
+- CSS ![CSS Passing Validator Screenshot](assets/images/css-validator.png)
+
+**User Stories:**
+
+- A User wants to sign up to become a member, when on the website they scroll down to the home page, navigate themselves onto the jumbotron and click the "Become A Member!" button. ![Home Screenshot](assets/images/home.png) Once Clicked they will be redirected to the form Page. In order for a user to become a member they need to fill in the required fields: First Name, Last Name, Email and Phone Number. ![The Form Page requesting fields to be filled out Screenshot](assets/images/form-required.png) Once that is complete they can finish the form by picking which car they are most interested by and submit the form using the "Submit!" button. Finally, they will be redirected to a thank you page. ![Submission Screenshot](assets/images/submission.png)
+
+**Fixed Bugs:**
+
+1. My CSS nor any of my images wouldn't load because my source paths included a "/" before the path e.g. href="/assets/css/style.css">. I fixed this by trying different file paths and stumbled across the problem, i then removed all the prefixed "/" and my site finally rendered the CSS and images.
+2. I couldn't figure out why my porsche jumbotron was floating to the left. ![Screenshot of the Bug](assets/images/bug-1.png) I then realized that in a CSS file there is specificity and that my porsche jumbotron wasn't getting the float:right; property because it had a lower specificity. I fixed this by targeting the element with a higher order of specificty such as a ID. ![Solution Screenshot](assets/images/fix-1.png)
+
+**Supported Screen Sizes:**
+
+- Mobile Phones and Small Tablets (Breakpoint: 320px to 768px).
+- Large Tablets and Small Laptops (Breakpoint: 768px to 1400px).
+- Large Laptops and Small Monitors (Breakpoint: 1400px to 1645px).
+- Large Monitors and Tv's (Breakpoint: 1645px +).
+
+## Deployment
+
+The Site was Deployed on GitHub Pages. This is the link <https://petergarvanski.github.io/PetersDealership/>
