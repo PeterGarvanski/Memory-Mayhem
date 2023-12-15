@@ -3,6 +3,9 @@
     font-family: 'Yeseva One', serif;
 }
 
+.dont-show {
+    display: none;
+}
 .center {
     display: flex;
     justify-content: center;
