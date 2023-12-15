@@ -1,5 +1,5 @@
 // Uncomment the line below for your Tests to run
-const $ = require('jquery');
+// const $ = require('jquery');
 
 class Game {
     constructor(score, level, lives) {
@@ -251,4 +251,4 @@ async function gameSequence() {
 $(document).on("click", "#start-button", gameSequence);
 
 // Uncomment the line below for Tests to run
-module.exports = { Game };
+// module.exports = { Game };
