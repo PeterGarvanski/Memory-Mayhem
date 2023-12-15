@@ -25,10 +25,6 @@
     display: none;
 }
 
-.dont-show {
-    display: none;
-}
-
 @keyframes rotate {
     from {
         transform: rotate(0deg);
@@ -186,13 +182,16 @@
     border: 5px solid aliceblue;
     border-radius: 50px;
     margin-top: 420px;
-    font-size: 40px;
-    font-family: 'Yeseva One', serif;
-    color: aliceblue;
 }
 
 #start-button:active {
     background-color: #93d193;
+}
+
+.start-button-content {
+    font-size: 40px;
+    font-family: 'Yeseva One', serif;
+    color: aliceblue;
 }
 
 #score-card {
@@ -311,7 +310,7 @@
     }
 
     #home {
-        background-image: linear-gradient(to right, rgb(72 75 77), rgba(0, 0, 0, 0), rgb(72 75 77));
+        background-image: linear-gradient(to right, rgb(72 75 77), rgba(0, 0, 0, 0), rgb(72 75 77)), ;
         background-size: 100%;
     }
 
@@ -401,7 +400,7 @@
     }
 
     #home {
-        background-image: linear-gradient(to right, rgb(72 75 77), rgba(0, 0, 0, 0), rgb(72 75 77));
+        background-image: linear-gradient(to right, rgb(72 75 77), rgba(0, 0, 0, 0), rgb(72 75 77)), ;
         background-size: 100%;
     }
 
@@ -461,7 +460,7 @@
     }
 }
 
-/* CSS For Medium and Large Laptop Screen Sizes */
+/* CSS For Small, Medium and Large Phone Screen Sizes */
 
 @media screen and (min-width: 768px) and (max-width: 992px) {
 
@@ -483,7 +482,7 @@
     }
 
     #home {
-        background-image: linear-gradient(to right, rgb(72 75 77), rgba(0, 0, 0, 0), rgb(72 75 77));
+        background-image: linear-gradient(to right, rgb(72 75 77), rgba(0, 0, 0, 0), rgb(72 75 77)), ;
         background-size: 100%;
     }
 
@@ -523,7 +522,7 @@
     }
 }
 
-/* CSS For Large Laptop Screen Sizes */
+/* CSS For Medium and Large Laptop Screen Sizes */
 
 @media screen and (min-width: 992px) and (max-width: 1200px) {
 
