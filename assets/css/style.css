@@ -182,16 +182,13 @@
     border: 5px solid aliceblue;
     border-radius: 50px;
     margin-top: 420px;
+    font-size: 40px;
+    font-family: 'Yeseva One', serif;
+    color: aliceblue;
 }
 
 #start-button:active {
     background-color: #93d193;
-}
-
-.start-button-content {
-    font-size: 40px;
-    font-family: 'Yeseva One', serif;
-    color: aliceblue;
 }
 
 #score-card {
@@ -342,9 +339,6 @@
     #start-button {
         border-radius: 25px;
         margin-top: 500px;
-    }
-
-    .start-button-content {
         font-size: 26px;
     }
 
@@ -427,9 +421,6 @@
 
     #start-button {
         border-radius: 35px;
-    }
-
-    .start-button-content {
         font-size: 30px;
     }
 
