@@ -139,27 +139,45 @@ Creating Memory Mayhem offers the chance to provide an engaging, enjoyable way f
 
 ## Testing
 
-**W3C Validator:**
+### W3C Validator:
 
-- HTML ![HTML Passing Validator Screenshot](assets/images/html-validator.png)
-- CSS ![CSS Passing Validator Screenshot](assets/images/css-validator.png)
+- ***HTML*** ![HTML Passing Validator Screenshot](assets/images/testing-images/w3c-validator-html.jpg)
 
-**User Stories:**
+### Jigsaw Validator:
+- ***CSS*** ![CSS Passing Validator Screenshot](assets/images/testing-images/jigsaw-validator-css.jpg)
 
-- A User wants to sign up to become a member, when on the website they scroll down to the home page, navigate themselves onto the jumbotron and click the "Become A Member!" button. ![Home Screenshot](assets/images/home.png) Once Clicked they will be redirected to the form Page. In order for a user to become a member they need to fill in the required fields: First Name, Last Name, Email and Phone Number. ![The Form Page requesting fields to be filled out Screenshot](assets/images/form-required.png) Once that is complete they can finish the form by picking which car they are most interested by and submit the form using the "Submit!" button. Finally, they will be redirected to a thank you page. ![Submission Screenshot](assets/images/submission.png)
+### Jest Mocking and Unit Tests:
+- ***JavaScript*** ![Javascript Passing jest tests Screenshot](assets/images/testing-images/javascript-jest-tests.jpg)
 
-**Fixed Bugs:**
+### Manual Testing:
 
-1. My CSS nor any of my images wouldn't load because my source paths included a "/" before the path e.g. href="/assets/css/style.css">. I fixed this by trying different file paths and stumbled across the problem, i then removed all the prefixed "/" and my site finally rendered the CSS and images.
-2. I couldn't figure out why my porsche jumbotron was floating to the left. ![Screenshot of the Bug](assets/images/bug-1.png) I then realized that in a CSS file there is specificity and that my porsche jumbotron wasn't getting the float:right; property because it had a lower specificity. I fixed this by targeting the element with a higher order of specificty such as a ID. ![Solution Screenshot](assets/images/fix-1.png)
+| Feature                 | Action                             | Expected Result               | Tested | Passed  | Comments            |
+| ----------------------- | ---------------------------------- | ----------------------------- | ------ | ------- | ------------------- |
+| Home Navigation         | Click on the 'Home' link           | Redirect to Home page         | ✅     | ✅     | Works Fine          |
+| Game Navigation         | Click on the 'Game' link           | Redirect to Game page         | ✅     | ✅     | Works Fine          |
+| Instructions Naviation  | Click on the 'Instructions' link   | Redirect to Instructions page | ✅     | ✅     | Works Fine          |
+| Brain Animation         | Check Home page to see             | Brain Should be spinning      | ✅     | ✅     | Works Fine          |
+| Question-Mark Animation | Refresh the page to see            | Question-Mark should roll in  | ✅     | ✅     | Works Fine          |
+| Start Button            | Click on 'Start Game' button       | Should start the game         | ✅     | ✅     | Works Fine          |
+| Score Counter           | Pass a Level to see incrementation | Should Increase by one        | ✅     | ✅     | Works Fine          |
+| Lives Counter           | Click a wrong square               | Should Decrease by one        | ✅     | ✅     | Needs 1 more press  |
+| Right-Square Clicked    | Click the right square             | Should turn square purple     | ✅     | ✅     | Works Fine          |
+| Wrong-Square Clicked    | Click the wrong square             | Should turn square grey       | ✅     | ✅     | Works Fine          |
 
-**Supported Screen Sizes:**
+### Fixed Bugs:
 
-- Mobile Phones and Small Tablets (Breakpoint: 320px to 768px).
-- Large Tablets and Small Laptops (Breakpoint: 768px to 1400px).
-- Large Laptops and Small Monitors (Breakpoint: 1400px to 1645px).
-- Large Monitors and Tv's (Breakpoint: 1645px +).
+1. **Negativve Lives Bug:** My Lives counter would go negative. After thorough testing I discovered this was due because within my ***playerTurn()*** Method, the conditional else if statement was checking the ***wrongSquares.length*** but this would change with every incrementation of a new level. To fix this, I simply used the ***Lives*** class property and compared to see if it was ***>= 0***.
+
+2. **Too Many Generated Squares Bug:** This bug happened ater the first level was surpassed. The ***generateSquares()*** method would generate too much squares. I realised this was because the ***generatedSquares*** property wasn't getting reset. To fix this, I simply added the ***setGeneratedSquares([])*** within the ***gameSequence()*** function, before the ***generateSquares()*** method.
+
+### Supported Screen Sizes:
+
+- **For Small, Medium and Large Phone Screen Sizes:** (Breakpoint: 320px to 576px).
+- **For Small and Medium Tablet Sizes:** (576px to 768px).
+- **For Small and Medium Laptop Screen Sizes:** (768px to 992px).
+- **For Large Laptop and Small Desktop Screen Sizes:** (992px to 1200px).
+- **For Large Desktop Screen Sizes:** (1200px +).
 
 ## Deployment
 
-The Site was Deployed on GitHub Pages. This is the link <https://petergarvanski.github.io/PetersDealership/>
+The Site was Deployed on GitHub Pages. This is the link <https://petergarvanski.github.io/Memory-Mayhem/>

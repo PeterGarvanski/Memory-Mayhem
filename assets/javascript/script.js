@@ -1,5 +1,5 @@
 // Uncomment the line below for your Tests to run
-// const $ = require('jquery');
+const $ = require('jquery');
 
 class Game {
     constructor(score, level, lives) {
@@ -8,65 +8,65 @@ class Game {
         this.lives = lives;
         this.generatedSquares = [];
         this.selectedSquares = [];
-        this.wrongSquares = []
+        this.wrongSquares = [];
     }
 
     // Getter for the score property
     getScore() {
         return this.score;
-    };
+    }
 
     // Getter for the level property
     getLevel() {
         return this.level;
-    };
+    }
 
     // Getter for the lives property
     getLives() {
         return this.lives;
-    };
+    }
 
     // Getter for the generatedSquares property
     getGeneratedSquares() {
         return this.generatedSquares;
-    };
+    }
 
     // Getter for the selectedSquares property
     getSelectedSquares() {
         return this.selectedSquares;
-    };
+    }
 
     // Setter for the score property
     setScore() {
         $("#score").empty().append('Score: ' + this.score);
-    };
+    }
 
     // Setter for the lives property
     setLives() {
         $("#lives").empty().append('Lives: ' + this.lives);
-    };
+    }
 
     // Setter for the generatedSquares property
     setGeneratedSquares(array) {
         this.generatedSquares = array;
-    };
+    }
 
     // Setter for the selectedSquares property
     setSelectedSquares(array) {
         this.selectedSquares = array;
-    };
+    }
 
     // Setter for the wrongSquares property
     setWrongSquares(array) {
         this.wrongSquares = array;
-    };
+    }
 
 
     // Clears the game display
     startGame() {
         $("#score-card-box").siblings().remove();
         $(".game-display").css("background-color", "white");
-    };
+    }
 
     // Displays a grid of squares based on the level you are at
     displayBuilder() {
@@ -251,4 +251,4 @@ async function gameSequence() {
 $(document).on("click", "#start-button", gameSequence);
 
 // Uncomment the line below for Tests to run
-// module.exports = { Game };
+module.exports = { Game };
