@@ -235,7 +235,7 @@ async function gameSequence() {
 
     while (user.getLives() > 0) {
         user.startGame();
-        user.displayBuilder(user.getLevel());
+        user.displayBuilder();
         user.setGeneratedSquares([]);
         user.setSelectedSquares([]);
         user.setWrongSquares([])
